@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>先排序后分组</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+</style>
+
+</head>
+
+<body>
+<P>最近在工作中遇到一个先排序后分组的需求，发现MySql不同的版本有不同的结果，特此记录。</P>
+<P>举例：要求在shop表中查询出各类型商店中价格最高的商品。</P>
+<P>--表结构--<BR>create table `shop` (<BR>&nbsp;&nbsp;&nbsp; `id` int (10) PRIMARY 
+KEY,<BR>&nbsp;&nbsp;&nbsp; `shop_name` varchar (100),<BR>&nbsp;&nbsp;&nbsp; 
+`item_name` varchar (100),<BR>&nbsp;&nbsp;&nbsp; `price` int (10)<BR>); </P>
+<P>insert into `shop` (`id`, `shop_name`, `item_name`,`price`) 
+values('1','小卖部','酱油','12');<BR>insert into `shop` (`id`, `shop_name`, 
+`item_name`,`price`) values('2','小卖部','醋','15');<BR>insert into `shop` (`id`, 
+`shop_name`, `item_name`,`price`) values('3','小卖部','脉动','20');<BR>insert into 
+`shop` (`id`, `shop_name`, `item_name`,`price`) 
+values('4','小卖部','沙姜','2');<BR>insert into `shop` (`id`, `shop_name`, 
+`item_name`,`price`) values('5','超市','猪肉','24');<BR>insert into `shop` (`id`, 
+`shop_name`, `item_name`,`price`) values('6','超市','生菜','6');<BR>insert into 
+`shop` (`id`, `shop_name`, `item_name`,`price`) 
+values('7','超市','菜心','5');<BR>insert into `shop` (`id`, `shop_name`, 
+`item_name`,`price`) values('8','连锁店','生姜','3');<BR>insert into `shop` (`id`, 
+`shop_name`, `item_name`,`price`) values('9','超市','牛肉','30');<BR>insert into 
+`shop` (`id`, `shop_name`, `item_name`,`price`) 
+values('10','连锁店','蒜头','2');<BR>insert into `shop` (`id`, `shop_name`, 
+`item_name`,`price`) values('11','连锁店','黄瓜','20');<BR></P>
+<P>&nbsp;</P>
+<P><BR>那么很自然地就想到了对价格price进行排序然后再根据商店类型shop_name进行分组查询</P>
+<P>select * from (select * from shop order by price desc) a GROUP BY a.shop_name 
+<BR><BR>这条sql很简单易懂，接下来我们验证一下是否正确：</P>
+<P>期望结果：</P>
+<P><BR>MySql 5.7.20下的实际结果：</P>
+<P><BR>可以看出来实际上得出的结果只是按照表数据的顺序，简单地进行了分组查询操作，但是这时候我们还不能下结论说这条sql就是错误的，我们用另一个数据库版本（MySql 
+5.5.57）测试一下。</P>
+<P>MySql 5.5.57下的结果：</P>
+<P><BR>为什么会有不同的结果?<BR>我们分别查看一下这条sql在两个不同版本数据库的执行计划：<BR>MySql 5.7.20:</P>
+<P><BR>MySql 5.5.57:</P>
+<P><BR>对比可以发现5.7版本的MySql在执行这条sql时缺少了一个derived操作，通过查阅相关资料了解到MySql 
+5.7对子查询进行了优化，认为子查询中的order by可以进行忽略，只要Derived table里不包含如下条件就可以进行优化：</P>
+<P>UNION clause<BR>GROUP BY<BR>DISTINCT<BR>Aggregation<BR>LIMIT or 
+OFFSET<BR>这里把链接放上：5.7中Derived table变形记</P>
+<P>最后放上相应的解决办法：</P>
+<P>--方法一，仅适用于低于5.7版本的MySql--<BR>select * from (select * from shop order by price 
+desc) a GROUP BY a.shop_name; </P>
+<P>--方法二--<BR>select * from (select * from shop order by price desc limit 
+999999) a GROUP BY a.shop_name;</P>
+<P>--方法三--<BR>select * from shop a where N &gt; (select count(*) from shop b 
+where b.shop_name = a.shop_name and a.price &lt; b.price) order by 
+a.shop_name,a.price desc;<BR></P>
+<P><BR>方法二中使用limit，需要limit的范围足够大能包括所有数据，并且每种分类只会显示一条数据，但是数据较多时运行效率要比方法三快上很多，方法三能够控制每种分类显示多少条数据，把N换成需要显示对应的数字即可。<BR>————————————————<BR>版权声明：本文为CSDN博主「Whiterock_Lelik」的原创文章，遵循 
+CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<BR>原文链接：<A 
+href="https://blog.csdn.net/lglaljj123/article/details/79864188">https://blog.csdn.net/lglaljj123/article/details/79864188</A></P></body>
+</html>

@@ -15,5 +15,19 @@ html,body {
 </head>
 
 <body>
-<P>model</P></body>
+<P>model</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>$obj = Shop::find()-&gt;where(['shop' 
+=&gt;'aaaa'])-&gt;one();</P>
+<P>$obj-&gt;desc = "dddddddddd";</P>
+<P>$obj-&gt;save();//这样保存不了</P>
+<P>&nbsp;</P>
+<P>$obj = Shop::findOne(['shop' =&gt; "aaa"]);</P>
+<P>$obj-&gt;desc = "dddddddddd";</P>
+<P>$obj-&gt;save();//这样就可以保存</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>如何修改where(['shop' =&gt; 'aaa'])-&gt;andWhere(['&gt;', 
+"age", 1])?findOne()掉不了！！！find()-&gt;one()修改不了</P></body>
 </html>

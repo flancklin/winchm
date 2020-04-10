@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>如何知道是否安装某个应用？</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+p{
+margin:3px
+}
+</style>
+
+</head>
+
+<body>
+<H2><FONT color=#008080>which nginx</FONT> </H2>
+<H2><FONT color=#008080>whereis nginx</FONT> </H2>
+<H2><FONT color=#008080>locate 
+php.ini&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+找文件</FONT> 
+ 
+</H2>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<DIV>
+<DIV>
+<P>出于各种原因，要判断实际需要的东西在哪个软件包里，需要有点儿小技巧。</P>
+<P>可以使用<CODE>which</CODE>命令来查找相关的二进制程序是否在搜索路径中:</P>
+<DIV class=_2Uzcx_><CODE class="shell  language-shell">$ which 
+gcc<BR>/opt/pware/bin/gcc<BR><SPAN aria-hidden=true 
+class=line-numbers-rows><SPAN></SPAN><SPAN></SPAN></SPAN></CODE></DIV>
+<P>如果<CODE>which</CODE>没有找到要找的命令，那么可以试试<CODE>whereis</CODE>；该命令可以搜素更大范围的系统目录，与shell的搜索路径无关。</P>
+<P>另外可以使用<CODE>locate</CODE>命令，它参照预先编译好的一个文件系统索引，以此确定与特定模式相匹配的文件名。<CODE>locate</CODE>的搜索并不只针对命令或者软件包，而是能够找到任何类型的文件。例如，如果读者不知道头文件<CODE>signal.h</CODE>在哪里：</P>
+<DIV class=_2Uzcx_><PRE class="line-numbers  language-shell"><CODE class="shell  language-shell">$ locate signal.h
+/usr/include/signal.h
+/usr/include/asm/signal.h
+/usr/include/asm-generic/signal.h
+/usr/include/linux/signal.h
+<SPAN aria-hidden=true class=line-numbers-rows><SPAN></SPAN><SPAN></SPAN><SPAN></SPAN><SPAN></SPAN><SPAN></SPAN></SPAN></CODE></PRE></DIV>
+<P><CODE>locate</CODE>命令需要维持一个数据库，这个数据库通常由<CODE>updatedb</CODE>命令定期更新，这条命令由<CODE>cron</CODE>运行。因此，执行locate的结果并不总是能反应最近文件系统的变化。</P>
+<P>如果用户知道要查找的软件包的名字，也可以使用系统上的软件包工具来直接检查是否存在该软件包。例如，在Red 
+Hat或者SUSE系统上，可以使用鲜面的命令检查是否有Python：</P>
+<DIV class=_2Uzcx_><PRE class="line-numbers  language-shell"><CODE class="shell  language-shell">$ rpm -q python
+python-2.4.3-21.e15
+<SPAN aria-hidden=true class=line-numbers-rows><SPAN></SPAN><SPAN></SPAN></SPAN></CODE></PRE></DIV>
+<P>如果使用Debian系统，可以使用<CODE>dpkg 
+-s</CODE>或者<CODE>dpkg-query</CODE>命令.</P></DIV><BR><BR>作者：Zsimov<BR>链接：https://www.jianshu.com/p/55dc1354d465<BR>来源：简书<BR>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</DIV>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></body>
+</html>

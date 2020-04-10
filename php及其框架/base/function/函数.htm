@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>函数</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+p{
+margin:0
+}
+</style>
+
+</head>
+
+<body>
+<H2><FONT color=#008000>无限参数函数1</FONT></H2>
+<P>function sum(...$numbers) {<BR>&nbsp;&nbsp;&nbsp; $acc = 
+0;<BR>&nbsp;&nbsp;&nbsp; foreach ($numbers as $n) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $acc += 
+$n;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; return $acc;<BR>}</P>
+<P>echo sum(1, 2, 3, 4);</P>
+<H2><FONT color=#008000>无限参数函数2</FONT></H2>
+<P><SPAN class=function><A class=function 
+href="mk:@MSITStore:C:\Users\EDZ\Desktop\php74_zh(2020).chm::/res/function.func-num-args.html">func_num_args()</A></SPAN>，<SPAN 
+class=function><A class=function 
+href="mk:@MSITStore:C:\Users\EDZ\Desktop\php74_zh(2020).chm::/res/function.func-get-arg.html">func_get_arg()</A></SPAN>，和 
+<SPAN class=function><A class=function 
+href="mk:@MSITStore:C:\Users\EDZ\Desktop\php74_zh(2020).chm::/res/function.func-get-args.html">func_get_args()</A></SPAN>    </P>
+<P>参数个数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+获取第x个参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 获取全部参数</P>
+<P><FONT color=#000000><FONT face="Courier New"><SPAN 
+style="COLOR: rgb(0,119,0)"><SPAN style="COLOR: rgb(0,119,0)"><SPAN 
+style="COLOR: rgb(0,119,0)">function foo()<BR>{<BR>&nbsp;&nbsp;&nbsp; echo 
+func_num_args();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //参数个数【3】<BR>&nbsp;&nbsp;&nbsp; 
+echo 
+func_get_arg(1);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//取1号位参数【2】。从0开始&nbsp;<BR>&nbsp;&nbsp;&nbsp; 
+var_dump(func_get_args()); //获取全部参数。【数组】<BR>}</SPAN></SPAN></SPAN></FONT> </FONT>    </P>
+<P><FONT face="Courier New"><SPAN 
+style="COLOR: rgb(0,119,0)"><SPAN style="COLOR: rgb(0,119,0)"><FONT color=#000000><SPAN 
+style="COLOR: rgb(0,119,0)">foo(1, 2, 3);</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)"></SPAN></FONT></SPAN></SPAN></FONT>    </P>
+<H2><FONT color=#008000>each---list的功效，传参</FONT>    </H2>
+<P>    &nbsp;</P>
+<P>function add($a, $b) {<BR>&nbsp;&nbsp;&nbsp; return $a + 
+$b;<BR>    }</P>
+<P>echo add(...[1, 2])."\n";</P>
+<P>$a =  
+ 
+ [1,2];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//['a'=&gt;1,'b'=&gt;2]这个写法不支持<BR>   echo add(...$a);</P>
+<P>    &nbsp;</P>
+<H2><FONT color=#008000>函数引用 <FONT color=#000000 size=2>从函数返回一个引用</FONT></FONT></H2>function 
+&amp;func()<BR>{<BR>&nbsp;&nbsp;&nbsp; static&nbsp; $p = 
+99;<BR>&nbsp;&nbsp;&nbsp; return $p;//['p' =&gt; $p];<BR>}<BR>$res = 
+&amp;func();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//等同于&nbsp; $res = 
+&amp;$p;切记申明的时候有&amp;，调用的时候也有&amp;<BR>echo 
+$res;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//99<BR>$res = 88;<BR>echo 
+func();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //88&nbsp;&nbsp; 
+<P>&nbsp;</P></body>
+</html>

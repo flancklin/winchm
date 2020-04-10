@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>trait</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+p{
+margin:0
+}
+</style>
+
+</head>
+
+<body>
+<P>如果两个 trait 都插入了一个同名的方法，如果没有明确解决冲突将会产生一个致命错误。 </P>
+<P class=para>为了解决多个 trait 在同一个类中的命名冲突，需要使用 <EM>insteadof</EM> 
+操作符来明确指定使用冲突方法中的哪一个。 </P>
+<P class=para>以上方式仅允许排除掉其它方法，<EM>as</EM> 操作符可以 为某个方法引入别名。 注意，<EM>as</EM> 
+操作符不会对方法进行重命名，也不会影响其方法。 </P>
+<DIV id=example-218 class=example>
+<P><STRONG>Example #5 冲突的解决</STRONG></P>
+<DIV class=example-contents>
+<P>在本例中 Talker 使用了 trait A 和 B。由于 A 和 B 有冲突的方法，其定义了使用 trait B 中的 smallTalk 以及 
+trait A 中的 bigTalk。 </P></DIV>
+<DIV class=example-contents>
+<P>Aliased_Talker<FONT color=#ff0000> 使用了 <EM>as</EM> 操作符来定义了 <EM>talk</EM> 来作为 B 的 
+bigTalk 的别名。</FONT>      
+</P></DIV>
+<DIV class=example-contents>
+<DIV class=phpcode><CODE><SPAN style="COLOR: rgb(0,0,0)"><SPAN 
+style="COLOR: rgb(0,0,187)">&lt;?php<BR></SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">trait&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">A&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">{<BR>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">smallTalk</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">()&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(221,0,0)">'a'</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">bigTalk</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">()&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(221,0,0)">'A'</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR><BR>trait&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">B&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">{<BR>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">smallTalk</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">()&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(221,0,0)">'b'</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">bigTalk</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">()&nbsp;{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(221,0,0)">'B'</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR><BR>class&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">Talker&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">{<BR>&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">A</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">,&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">B&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">B</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">::</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">smallTalk&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">insteadof&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">A</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">A</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">::</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">bigTalk&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">insteadof&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">B</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR><BR>class&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">Aliased_Talker&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">{<BR>&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">A</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">,&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">B&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">B</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">::</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">smallTalk&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">insteadof&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">A</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;//A、B两个trait中冲突。用B的不用A的<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">A</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">::</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">bigTalk&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">insteadof&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">B</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">B</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">::</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">bigTalk&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">as&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">talk</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;</SPAN> </SPAN></CODE></DIV>
+<DIV class=phpcode><CODE><SPAN style="COLOR: rgb(0,0,0)"><SPAN 
+style="COLOR: rgb(0,119,0)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN 
+style="COLOR: rgb(0,0,187)">B</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">::</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">bigTalk&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">as private&nbsp;</SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">talk</SPAN><SPAN 
+style="COLOR: rgb(0,119,0)">;//<FONT color=#ff0000>修改方法的访问控制</FONT></SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>}<BR></SPAN><SPAN 
+style="COLOR: rgb(0,0,187)">?&gt;</SPAN> </SPAN></CODE></DIV></DIV></DIV>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></body>
+</html>

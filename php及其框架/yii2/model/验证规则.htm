@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>验证规则</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+p{
+margin:0;
+color:red
+}
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    background: #f0f0f0;
+}
+</style>
+
+</head>
+
+<body>
+<P>&nbsp;</P>
+<P>&nbsp;</P><A 
+href="https://www.yiichina.com/tutorial/635">https://www.yiichina.com/tutorial/635</A>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<div class="col-lg-9">
+        <div class="page-header">
+            <h1>&nbsp;
+            </h1>
+            <h1>
+                Yii 2.0 rules 验证规则大全                <small>[ 未指定版本 ]</small>
+            </h1>
+        </div>
+
+        <div class="action">
+        </div>
+
+        <div class="markdown">
+<p>required : 必须值验证属性</p>
+<pre><code class="hljs php language-php">[[<span class="hljs-string"><span class="hljs-string">'字段名'</span></span>],required,<span class="hljs-string"><span class="hljs-string">'requiredValue'</span></span>=&gt;<span class="hljs-string"><span class="hljs-string">'必填值'</span></span>,<span class="hljs-string"><span class="hljs-string">'message'</span></span>=&gt;<span class="hljs-string"><span class="hljs-string">'提示信息'</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CRequiredValidator 的别名, 确保了特性不为空. </span></span></code></pre>
+
+<p>safe : 安全</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'description'</span></span>, <span class="hljs-string"><span class="hljs-string">'safe'</span></span>];</code></pre>
+
+<p>email : 邮箱验证</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'email'</span></span>, <span class="hljs-string"><span class="hljs-string">'email'</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CEmailValidator的别名,确保了特性的值是一个有效的电邮地址. </span></span></code></pre>
+
+<p>url : 网址</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'website'</span></span>, <span class="hljs-string"><span class="hljs-string">'url'</span></span>, <span class="hljs-string"><span class="hljs-string">'defaultScheme'</span></span> =&gt; <span class="hljs-string"><span class="hljs-string">'http'</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CUrlValidator 的别名, 确保了特性是一个有效的路径. </span></span></code></pre>
+
+<p>captcha : 验证码</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'verificationCode'</span></span>, <span class="hljs-string"><span class="hljs-string">'captcha'</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CCaptchaValidator 的别名,确保了特性的值等于 CAPTCHA 显示出来的验证码. </span></span></code></pre>
+
+<p>match : 正则验证</p>
+<pre><code class="hljs php language-php">[[<span class="hljs-string"><span class="hljs-string">'字段名'</span></span>],match,<span class="hljs-string"><span class="hljs-string">'pattern'</span></span>=&gt;<span class="hljs-string"><span class="hljs-string">'正则表达式'</span></span>,<span class="hljs-string"><span class="hljs-string">'message'</span></span>=&gt;<span class="hljs-string"><span class="hljs-string">'提示信息'</span></span>];      
+[[<span class="hljs-string"><span class="hljs-string">'字段名'</span></span>],match,<span class="hljs-string"><span class="hljs-string">'not'</span></span>=&gt;ture,<span class="hljs-string"><span class="hljs-string">'pattern'</span></span>=&gt;<span class="hljs-string"><span class="hljs-string">'正则表达式'</span></span>,<span class="hljs-string"><span class="hljs-string">'message'</span></span>=&gt;<span class="hljs-string"><span class="hljs-string">'提示信息'</span></span>]; <span class="hljs-comment"><span class="hljs-comment">/*正则取反*/</span></span> <span class="hljs-comment"><span class="hljs-comment">#说明:CRegularExpressionValidator 的别名, 确保了特性匹配一个正则表达式. </span></span></code></pre>
+
+<p>compare : 比较</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'age'</span></span>, <span class="hljs-string"><span class="hljs-string">'compare'</span></span>, <span class="hljs-string"><span class="hljs-string">'compareValue'</span></span> =&gt; <span class="hljs-number"><span class="hljs-number">30</span></span>, <span class="hljs-string"><span class="hljs-string">'operator'</span></span> =&gt; <span class="hljs-string"><span class="hljs-string">'&gt;='</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:compareValue(比较常量值) - operator(比较操作符)  #说明:CCompareValidator 的别名,确保了特性的值等于另一个特性或常量. </span></span></code></pre>
+
+<p>default : 默认值</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'age'</span></span>, <span class="hljs-string"><span class="hljs-string">'default'</span></span>, <span class="hljs-string"><span class="hljs-string">'value'</span></span> =&gt; <span class="hljs-keyword"><span class="hljs-keyword">null</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CDefaultValueValidator 的别名, 为特性指派了一个默认值. </span></span></code></pre>
+
+<p>exist : 存在</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'username'</span></span>, <span class="hljs-string"><span class="hljs-string">'exist'</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CExistValidator 的别名,确保属性值存在于指定的数据表字段中. </span></span></code></pre>
+
+<p>unique : 唯一性</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'username'</span></span>, <span class="hljs-string"><span class="hljs-string">'unique'</span></span>] <span class="hljs-comment"><span class="hljs-comment">#说明:CUniqueValidator 的别名,确保了特性在数据表字段中是唯一的. </span></span></code></pre>
+
+<p>file : 文件</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'primaryImage'</span></span>, <span class="hljs-string"><span class="hljs-string">'file'</span></span>, <span class="hljs-string"><span class="hljs-string">'extensions'</span></span> =&gt; [<span class="hljs-string"><span class="hljs-string">'png'</span></span>, <span class="hljs-string"><span class="hljs-string">'jpg'</span></span>, <span class="hljs-string"><span class="hljs-string">'gif'</span></span>], <span class="hljs-string"><span class="hljs-string">'maxSize'</span></span> =&gt; <span class="hljs-number"><span class="hljs-number">1024</span></span>*<span class="hljs-number"><span class="hljs-number">1024</span></span>*<span class="hljs-number"><span class="hljs-number">1024</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CFileValidator 的别名, 确保了特性包含了一个上传文件的名称. </span></span></code></pre>
+
+<p>filter : 滤镜</p>
+<pre><code class="hljs php language-php">[[<span class="hljs-string"><span class="hljs-string">'username'</span></span>, <span class="hljs-string"><span class="hljs-string">'email'</span></span>], <span class="hljs-string"><span class="hljs-string">'filter'</span></span>, <span class="hljs-string"><span class="hljs-string">'filter'</span></span> =&gt; <span class="hljs-string"><span class="hljs-string">'trim'</span></span>, <span class="hljs-string"><span class="hljs-string">'skipOnArray'</span></span> =&gt; <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CFilterValidator 的别名, 使用一个filter转换属性. </span></span></code></pre>
+
+<p>in : 范围</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'level'</span></span>, <span class="hljs-string"><span class="hljs-string">'in'</span></span>, <span class="hljs-string"><span class="hljs-string">'range'</span></span> =&gt; [<span class="hljs-number"><span class="hljs-number">1</span></span>, <span class="hljs-number"><span class="hljs-number">2</span></span>, <span class="hljs-number"><span class="hljs-number">3</span></span>]]; <span class="hljs-comment"><span class="hljs-comment">#说明:CRangeValidator 的别名,确保了特性出现在一个预订的值列表里. </span></span></code></pre>
+
+
+<p>integer : 整数</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'age'</span></span>, <span class="hljs-string"><span class="hljs-string">'integer'</span></span>];</code></pre>
+
+<p>number : 数字</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'salary'</span></span>, <span class="hljs-string"><span class="hljs-string">'number'</span></span>];</code></pre>
+
+<p>double : 双精度浮点型</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'salary'</span></span>, <span class="hljs-string"><span class="hljs-string">'double'</span></span>];</code></pre>
+
+<p>date : 日期</p>
+<pre><code class="hljs php language-php">[[<span class="hljs-string"><span class="hljs-string">'from'</span></span>, <span class="hljs-string"><span class="hljs-string">'to'</span></span>], <span class="hljs-string"><span class="hljs-string">'date'</span></span>];</code></pre>
+
+<p>string : 字符串</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'username'</span></span>, <span class="hljs-string"><span class="hljs-string">'string'</span></span>, <span class="hljs-string"><span class="hljs-string">'length'</span></span> =&gt; [<span class="hljs-number"><span class="hljs-number">4</span></span>, <span class="hljs-number"><span class="hljs-number">24</span></span>]];</code></pre>
+
+<p>boolean : 是否为一个布尔值</p>
+<pre><code class="hljs php language-php">[<span class="hljs-string"><span class="hljs-string">'字段名'</span></span>, <span class="hljs-string"><span class="hljs-string">'boolean'</span></span>, <span class="hljs-string"><span class="hljs-string">'trueValue'</span></span> =&gt; <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>, <span class="hljs-string"><span class="hljs-string">'falseValue'</span></span> =&gt; <span class="hljs-keyword"><span class="hljs-keyword">false</span></span>, <span class="hljs-string"><span class="hljs-string">'strict'</span></span> =&gt; <span class="hljs-keyword"><span class="hljs-keyword">true</span></span>]; <span class="hljs-comment"><span class="hljs-comment">#说明:CBooleanValidator 的别名 </span></span></code></pre>
+
+</div>
+    </div>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</body>
+</html>

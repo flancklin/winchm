@@ -1,0 +1,634 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>composer</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+p{
+margin:0
+}
+</style>
+
+</head>
+
+<body>
+<P>官网&nbsp;&nbsp; <A 
+href="https://www.phpcomposer.com/">https://www.phpcomposer.com/</A></P>
+<H3><FONT color=#008000>有什么用</FONT></H3>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P>composer 解决的是项目与项目之间的相互依赖关系（或者可以理解为继承）。</P>
+<P>比如说</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+插件型项目A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+负责把php数据套在html上(smarty)</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+框架型项目B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+比如thinkphp3.2（直接引入在composer.json中引入smarty的版本，无需手动拷贝）</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+实际项目c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+开发一个商城。我在composer.json中引入框架B即可，无需去引入项目A。但是项目A的代码最终必须下载到我的本地，谁去负责下载和管理？就是composer。解决和管理项目之间集成或引入的问题。</P>
+<P> 
+ 
+&nbsp;</P>
+<P>&nbsp;</P>
+<P 
+style='BOX-SIZING: border-box; FONT-SIZE: 16px; FONT-FAMILY: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Composer 
+将这样为你解决问题：</P>
+<P 
+style='BOX-SIZING: border-box; FONT-SIZE: 16px; FONT-FAMILY: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>a) 
+你有一个项目依赖于若干个库。</P>
+<P 
+style='BOX-SIZING: border-box; FONT-SIZE: 16px; FONT-FAMILY: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>b) 
+其中一些库依赖于其他库。</P>
+<P 
+style='BOX-SIZING: border-box; FONT-SIZE: 16px; FONT-FAMILY: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>c) 
+你声明你所依赖的东西。</P>
+<P 
+style='BOX-SIZING: border-box; FONT-SIZE: 16px; FONT-FAMILY: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>d) 
+Composer 会找出哪个版本的包需要安装，并安装它们（将它们下载到你的项目中）。</P></BLOCKQUOTE>
+<P> 
+ 
+&nbsp;</P>
+<H3><FONT color=#008000>安装</FONT> 
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<A 
+href="https://docs.phpcomposer.com/00-intro.html#Installation-Windows">https://docs.phpcomposer.com/00-intro.html#Installation-Windows</A> 
+ 
+</H3>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+记住安装后记得重启电脑</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<H3><FONT color=#008000>composer.json文件</FONT> 
+ 
+</H3>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P> 
+ 
+&nbsp;</P><PRE style='BOX-SIZING: border-box; FONT-SIZE: 14px; OVERFLOW: auto; BORDER-TOP: medium none; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: medium none; WORD-SPACING: 0px; BORDER-BOTTOM: medium none; TEXT-TRANSFORM: none; WORD-BREAK: break-all; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); PADDING-BOTTOM: 9px; FONT-STYLE: normal; PADDING-TOP: 9px; PADDING-LEFT: 9px; BORDER-LEFT: medium none; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; DISPLAY: block; LETTER-SPACING: normal; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 9px; BACKGROUND-COLOR: rgb(250,251,252); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; overflow-wrap: break-word; border-radius: 0px'><CODE class=language-json style='BOX-SIZING: border-box; FONT-FAMILY: Consolas, Monaco, "Andale Mono", monospace; WHITE-SPACE: pre; WORD-SPACING: normal; WORD-BREAK: normal; COLOR: ; PADDING-BOTTOM: 0px; DIRECTION: ltr; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND-COLOR: transparent; border-radius: 0px; text-shadow: white 0px 1px; tab-size: 4; hyphens: none'>{
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+}</CODE></PRE>
+<P> 
+ 
+存放的位置&nbsp;&nbsp;&nbsp;&nbsp; 
+vendor/monolog/monolog/...</P></BLOCKQUOTE>
+<H3><FONT color=#008000>composer.lock文件</FONT> 
+ 
+</H3>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P>&nbsp;记录当前已安装的全部依赖项目和其版本号。为了让代码在多个环境下，版本一致，把composer.json和composer.lock一起提交。</P></BLOCKQUOTE>
+<H3><FONT color=#008000>自动加载</FONT> 
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</H3>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr><PRE class=" language-php" style='BOX-SIZING: border-box; FONT-SIZE: 14px; OVERFLOW: auto; BORDER-TOP: medium none; FONT-FAMILY: Consolas, Monaco, "Andale Mono", monospace; BORDER-RIGHT: medium none; BACKGROUND: rgb(250,251,252); WHITE-SPACE: pre; WORD-SPACING: 0px; BORDER-BOTTOM: medium none; TEXT-TRANSFORM: none; WORD-BREAK: normal; FONT-WEIGHT: 400; COLOR: black; PADDING-BOTTOM: 1em; DIRECTION: ltr; FONT-STYLE: normal; TEXT-ALIGN: left; PADDING-TOP: 1em; PADDING-LEFT: 1em; BORDER-LEFT: medium none; ORPHANS: 2; WIDOWS: 2; MARGIN: 0.5em 0px 1.2em; DISPLAY: block; LETTER-SPACING: normal; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 1em; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; overflow-wrap: break-word; border-radius: 0px; text-shadow: white 0px 1px; tab-size: 4; hyphens: none'><CODE class=" language-php" style='BOX-SIZING: border-box; FONT-FAMILY: Consolas, Monaco, "Andale Mono", monospace; WHITE-SPACE: pre; WORD-SPACING: normal; WORD-BREAK: normal; COLOR: ; PADDING-BOTTOM: 0px; DIRECTION: ltr; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND-COLOR: transparent; border-radius: 0px; text-shadow: white 0px 1px; tab-size: 4; hyphens: none'><SPAN class="token keyword" style="BOX-SIZING: border-box; COLOR: rgb(0,119,170)">require</SPAN> <SPAN class="token string" style="BOX-SIZING: border-box; COLOR: rgb(102,153,0)">'vendor/autoload.php'</SPAN><SPAN class="token punctuation" style="BOX-SIZING: border-box; COLOR: rgb(153,153,153)">;</SPAN></CODE></PRE>
+<P 
+style='BOX-SIZING: border-box; FONT-SIZE: 16px; FONT-FAMILY: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>你可以在<SPAN>&nbsp;</SPAN><CODE 
+style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>composer.json</CODE><SPAN>&nbsp;</SPAN>的<SPAN>&nbsp;</SPAN><CODE 
+style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>autoload</CODE><SPAN>&nbsp;</SPAN>字段中增加自己的 
+autoloader。</P><PRE style='BOX-SIZING: border-box; FONT-SIZE: 14px; OVERFLOW: auto; BORDER-TOP: medium none; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: medium none; WORD-SPACING: 0px; BORDER-BOTTOM: medium none; TEXT-TRANSFORM: none; WORD-BREAK: break-all; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); PADDING-BOTTOM: 9px; FONT-STYLE: normal; PADDING-TOP: 9px; PADDING-LEFT: 9px; BORDER-LEFT: medium none; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; DISPLAY: block; LETTER-SPACING: normal; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 9px; BACKGROUND-COLOR: rgb(250,251,252); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; overflow-wrap: break-word; border-radius: 0px'><CODE class=language-json style='BOX-SIZING: border-box; FONT-FAMILY: Consolas, Monaco, "Andale Mono", monospace; WHITE-SPACE: pre; WORD-SPACING: normal; WORD-BREAK: normal; COLOR: ; PADDING-BOTTOM: 0px; DIRECTION: ltr; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND-COLOR: transparent; border-radius: 0px; text-shadow: white 0px 1px; tab-size: 4; hyphens: none'>{
+    "autoload": {
+        "psr-4": {"Acme\\": "src/"}
+    }
+}
+</CODE></PRE>
+<P 
+style='BOX-SIZING: border-box; FONT-SIZE: 16px; FONT-FAMILY: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 1.2em; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Composer 
+将注册一个<SPAN>&nbsp;</SPAN><A 
+style="BOX-SIZING: border-box; TEXT-DECORATION: underline; COLOR: rgb(68,68,255); BACKGROUND-COLOR: transparent" 
+href="http://www.php-fig.org/psr/psr-4/" 
+target=_blank>PSR-4</A><SPAN>&nbsp;</SPAN>autoloader 到<SPAN>&nbsp;</SPAN><CODE 
+style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>Acme</CODE><SPAN>&nbsp;</SPAN>命名空间。</P></BLOCKQUOTE>
+<H3><FONT color=#008000>版本写法</FONT> 
+ 
+</H3>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P> 
+ 
+&nbsp;</P>
+<P>
+<TABLE 
+style='BOX-SIZING: border-box; FONT-SIZE: 16px; MARGIN-BOTTOM: 20px; MAX-WIDTH: 100%; BORDER-TOP: rgb(221,221,221) 1px solid; FONT-FAMILY: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif; BORDER-RIGHT: rgb(221,221,221) 1px solid; WIDTH: 800px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: rgb(221,221,221) 1px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); FONT-STYLE: normal; BORDER-SPACING: 0px; BORDER-LEFT: rgb(221,221,221) 1px solid; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>
+  <THEAD style="BOX-SIZING: border-box">
+  <TR style="BOX-SIZING: border-box">
+    <TH 
+    style="BOX-SIZING: border-box; BORDER-RIGHT: rgb(221,221,221) 1px solid; BORDER-TOP-COLOR: ; VERTICAL-ALIGN: bottom; BORDER-BOTTOM: rgb(221,221,221) 2px solid; FONT-WEIGHT: normal; PADDING-BOTTOM: 8px; TEXT-ALIGN: left; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px; BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: rgb(241,241,241); border-image: initial">名称</TH>
+    <TH 
+    style="BOX-SIZING: border-box; BORDER-RIGHT: rgb(221,221,221) 1px solid; BORDER-TOP-COLOR: ; VERTICAL-ALIGN: bottom; BORDER-BOTTOM: rgb(221,221,221) 2px solid; FONT-WEIGHT: normal; PADDING-BOTTOM: 8px; TEXT-ALIGN: left; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px; BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: rgb(241,241,241); border-image: initial">实例</TH>
+    <TH 
+    style="BOX-SIZING: border-box; BORDER-RIGHT: rgb(221,221,221) 1px solid; BORDER-TOP-COLOR: ; VERTICAL-ALIGN: bottom; BORDER-BOTTOM: rgb(221,221,221) 2px solid; FONT-WEIGHT: normal; PADDING-BOTTOM: 8px; TEXT-ALIGN: left; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px; BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: rgb(241,241,241); border-image: initial">描述</TH></TR></THEAD>
+  <TBODY style="BOX-SIZING: border-box">
+  <TR style="BOX-SIZING: border-box">
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      >确切的版本号</TD>
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      ><CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>1.0.2</CODE></TD>
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      >你可以指定包的确切版本。</TD></TR>
+  <TR style="BOX-SIZING: border-box">
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      >范围</TD>
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      ><CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&gt;=1.0</CODE><SPAN>&nbsp;</SPAN><CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&gt;=1.0,&lt;2.0</CODE><SPAN>&nbsp;</SPAN><CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&gt;=1.0,&lt;1.1|&gt;=1.2</CODE></TD>
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      >通过使用比较操作符可以指定有效的版本范围。<BR 
+      style="BOX-SIZING: border-box">有效的运算符：<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&gt;</CODE>、<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&gt;=</CODE>、<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&lt;</CODE>、<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&lt;=</CODE>、<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>!=</CODE>。<BR 
+      style="BOX-SIZING: border-box">你可以定义多个范围，用逗号隔开，这将被视为一个<STRONG 
+      style="BOX-SIZING: border-box; FONT-WEIGHT: 700">逻辑AND</STRONG>处理。一个管道符号<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>|</CODE>将作为<STRONG 
+      style="BOX-SIZING: border-box; FONT-WEIGHT: 700">逻辑OR</STRONG>处理。<BR 
+      style="BOX-SIZING: border-box">AND 的优先级高于 OR。</TD></TR>
+  <TR style="BOX-SIZING: border-box">
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      >通配符</TD>
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      ><CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>1.0.*</CODE></TD>
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      >你可以使用通配符<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>*</CODE>来指定一种模式。<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>1.0.*</CODE>与<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&gt;=1.0,&lt;1.1</CODE>是等效的。</TD></TR>
+  <TR style="BOX-SIZING: border-box">
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      >赋值运算符</TD>
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      ><CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>~1.2</CODE></TD>
+    <TD                                      style="BOX-SIZING: border-box; BORDER-TOP: rgb(221,221,221) 1px solid; BORDER-RIGHT: rgb(221,221,221) 1px solid; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(221,221,221) 1px solid; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 8px; BORDER-LEFT: rgb(221,221,221) 1px solid; LINE-HEIGHT: 1.4285; PADDING-RIGHT: 8px"      >这对于遵循语义化版本号的项目非常有用。<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>~1.2</CODE>相当于<CODE 
+      style='BOX-SIZING: border-box; FONT-SIZE: 14px; BORDER-TOP: rgb(204,204,204) 1px solid; FONT-FAMILY: Menlo, Monaco, Consolas, "Courier New", monospace; BORDER-RIGHT: rgb(204,204,204) 1px solid; BORDER-BOTTOM: rgb(204,204,204) 1px solid; COLOR: ; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 4px; BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0px 2px; DISPLAY: inline-block; LINE-HEIGHT: 18px; PADDING-RIGHT: 4px; BACKGROUND-COLOR: rgb(249,242,244); border-radius: 3px'>&gt;=1.2,&lt;2.0</CODE>。想要了解更多，请阅读下一小节。</TD></TR></TBODY></TABLE> 
+ 
+</P></BLOCKQUOTE>
+<H3><FONT color=#008000>常用指令</FONT> 
+ 
+</H3>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr>
+<P> 
+ 
+&nbsp;</P>
+<P>
+<TABLE style="WIDTH: 1397.28pt; BORDER-COLLAPSE: collapse" height=1679 
+cellSpacing=0 cellPadding=0 width=1863 border=0>
+  <COLGROUP>
+  <COL style="WIDTH: 144pt" width=192>
+  <COL style="WIDTH: 225.75pt" width=301>
+  <COL style="WIDTH: 171pt" width=228>
+  <COL style="WIDTH: 856.5pt" width=1142>
+  
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et5     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 17.25pt; BORDER-RIGHT: #000000 0.5pt solid; WIDTH: 1397.25pt; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=23 width=1863 colSpan=4><A 
+      title=https://docs.phpcomposer.com/03-cli.html 
+      href="https://docs.phpcomposer.com/03-cli.html"><FONT face=微软雅黑>https://docs.phpcomposer.com/03-cli.html</FONT></A></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 207pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=276 rowSpan=12 x:str><FONT face=微软雅黑>全局参数</FONT></TD>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--verbose (-v)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>增加反馈信息的详细度</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>-v</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>表示正常输出</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>-vv</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>表示更详细的输出</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>-vvv</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>则是为了 debug</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--help (-h)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>显示帮助信息</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--quiet (-q)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>禁止输出任何信息</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-interaction (-n)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>不要询问任何交互问题。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--working-dir (-d)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>如果指定的话，使用给定的目录作为工作目录。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--profile</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>显示时间和内存使用信息</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--ansi</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>强制 ANSI 输出</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-ansi</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>关闭 ANSI 输出</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--version (-V)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>显示当前应用程序的版本信息。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 138pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=184 rowSpan=8 x:str><FONT face=微软雅黑>初始化<SPAN class=font0><FONT color=#ff0000>init</FONT></SPAN></FONT></TD>
+    <TD class=et12     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=8 x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+    init</FONT></TD>
+    <TD class=et13     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2><A title=https://docs.phpcomposer.com/02-libraries.html 
+      href="https://docs.phpcomposer.com/02-libraries.html"><FONT face=微软雅黑>其实就是<SPAN class=font0><FONT color=#ff0000>创建composer.json文件</FONT></SPAN><SPAN class=font1><FONT color=#333333>。在<SPAN style="mso-spacerun: yes">&nbsp;</SPAN>“库”<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>那一章我们看到了如何手动创建<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件。实际上还有一个<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>init<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令可以更容易的做到这一点。</FONT></SPAN></FONT></A></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT face=微软雅黑>--name</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>包的名称。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--description</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>包的描述。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--author</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>包的作者。</FONT></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--homepage</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>包的主页</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--require</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>需要依赖的其它包，必须要有一个版本约束。并且应该遵循<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>foo/bar:1.0.0<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>这样的格式</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--require-dev</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>开发版的依赖包，内容格式与<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>--require<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>相同</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--stability (-s)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>minimum-stability<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>字段的值</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 172.5pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=230 rowSpan=10 x:str><FONT face=微软雅黑>安装<SPAN class=font0><FONT color=#ff0000>install</FONT></SPAN></FONT></TD>
+    <TD class=et16     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=10 x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+      install</FONT></TD>
+    <TD class=et13     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT face=微软雅黑><FONT color=#333333>从</FONT><SPAN 
+      class=font0><FONT color=#ff0000>composer.lock(若没有则composer.json)下载</FONT></SPAN><SPAN 
+      class=font1><FONT color=#333333>安装依赖关系</FONT></SPAN></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--prefer-source</FONT></TD>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT face=微软雅黑>从版本控制源下载</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--prefer-dist</FONT></TD>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT face=微软雅黑>默认。从dist获取(缓存？)</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--dry-run</FONT></TD>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT face=微软雅黑>演示并非实际安装</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--dev</FONT></TD>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT face=微软雅黑>安装require-dev字段中列出的包（这是一个默认值）</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-dev</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>跳过<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>require-dev<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>字段中列出的包</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-scripts</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>跳过<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件中定义的脚本</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-plugins</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>关闭 plugins</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-progress</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示。</FONT></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--optimize-autoloader (-o)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>转换 PSR-0/4 autoloading 到 classmap 
+      可以获得更快的加载支持。特别是在生产环境下建议这么做，但由于运行需要一些时间，因此并没有作为默认值</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 207pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=276 rowSpan=12 x:str><FONT face=微软雅黑>更新update</FONT></TD>
+    <TD class=et16     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=9 x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+      update</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT face=微软雅黑><FONT color=#333333>为了获取依赖的最新版本，并且</FONT><SPAN class=font0><FONT color=#ff0000>升级<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.lock<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件</FONT></SPAN><SPAN 
+      class=font1><FONT color=#333333>，你应该使用<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>update<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令。</FONT></SPAN></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--prefer-source:</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>当有可用的包时，从<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>source<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>安装</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--prefer-dist</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>当有可用的包时，从<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>dist<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>安装。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--dry-run</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>模拟命令，并没有做实际的操作</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--dev</FONT></TD>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT face=微软雅黑>安装require-dev字段中列出的包（这是一个默认值）</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-dev</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>跳过<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>require-dev<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>字段中列出的包</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-scripts</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>跳过<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件中定义的脚本</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-plugins</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>关闭 plugins</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-progress</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示。</FONT></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et22     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; WIDTH: 225.75pt; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=3 width=301 x:str><FONT face=微软雅黑>php composer.phar update 
+      <BR>vendor/package vendor/package2</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--optimize-autoloader (-o)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>转换 PSR-0/4 autoloading 到 classmap 
+      可以获得更快的加载支持。特别是在生产环境下建议这么做，但由于运行需要一些时间，因此并没有作为默认值</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--lock</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>仅更新 lock 文件的 hash，取消有关 lock 
+      文件过时的警告。</FONT></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑>--with-dependencies<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN></FONT></FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>同时更新白名单内包的依赖关系，这将进行递归更新。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et25     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 120.75pt; BORDER-RIGHT: #000000 0.5pt solid; WIDTH: 144pt; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=161 rowSpan=7 width=192 x:str><FONT face=微软雅黑><FONT color=#333333>申明依赖</FONT><SPAN class=font0><FONT color=#ff0000>require</FONT></SPAN></FONT></TD>
+    <TD class=et16     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=7 x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+      require</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT face=微软雅黑><FONT color=#333333>require<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令</FONT><SPAN class=font0><FONT color=#ff0000>增加新的依赖包到当前目录的<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件中</FONT></SPAN><SPAN 
+      class=font1><FONT color=#333333>。</FONT></SPAN></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--prefer-source:</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>当有可用的包时，从<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>source<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>安装</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--prefer-dist</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>当有可用的包时，从<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>dist<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>安装。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--dev</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>安装<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>require-dev<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>字段中列出的包</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-update</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>禁用依赖关系的自动更新</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-progress</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑>--update-with-dependencies<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN></FONT></FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>一并更新新装包的依赖</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et25     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 34.5pt; BORDER-RIGHT: #000000 0.5pt solid; WIDTH: 144pt; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=46 rowSpan=2 width=192 x:str><FONT face=微软雅黑><FONT color=#333333>搜索</FONT><SPAN class=font0><FONT color=#ff0000>search</FONT></SPAN></FONT></TD>
+    <TD class=et16     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=2 x:str><FONT color=#333333 face=微软雅黑>php composer.phar search 
+      monolog</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT face=微软雅黑><FONT color=#333333>search<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令允许你为当前项目</FONT><SPAN 
+      class=font0><FONT color=#ff0000>搜索依赖包</FONT></SPAN><SPAN class=font1><FONT color=#333333>，通常它只搜索 packagist.org 
+      上的包，你可以简单的输入你的搜索条件。</FONT></SPAN></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--only-name (-N)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>仅针对指定的名称搜索（完全匹配）</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et25     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 69pt; BORDER-RIGHT: #000000 0.5pt solid; WIDTH: 144pt; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=92 rowSpan=4 width=192 x:str><FONT face=微软雅黑><FONT color=#333333>展示</FONT><SPAN class=font0><FONT color=#ff0000>show</FONT></SPAN></FONT></TD>
+    <TD class=et27     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; WIDTH: 225.75pt; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=4 width=301 x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+      show <BR>monolog/monolog</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT color=#333333 face=微软雅黑>列出所有可用的软件包，你可以使用<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>show<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--installed (-i)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>列出已安装的依赖包</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--platform (-p)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>仅列出平台软件包（PHP 
+  与它的扩展）</FONT></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--self (-s)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>仅列出当前项目信息。</FONT></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 34.5pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=46 rowSpan=2 x:str><FONT face=微软雅黑>依赖性检测<SPAN class=font0><FONT color=#ff0000>depends</FONT></SPAN></FONT></TD>
+    <TD class=et27     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; WIDTH: 225.75pt; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=2 width=301 x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+      depends <BR>--link-type=require monolog/monolog</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT color=#333333 face=微软雅黑>depends<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令可以查出已安装在你项目中的某个包，是否正在被其它的包所依赖，并列出他们</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--link-type</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>检测的类型，默认为<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>require<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>也可以是<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>require-dev。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 34.5pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=46 rowSpan=2 x:str><FONT face=微软雅黑>有效性检测<SPAN class=font0><FONT color=#ff0000>validate</FONT></SPAN></FONT></TD>
+    <TD class=et16     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     rowSpan=2 x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+      validate</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT face=微软雅黑><FONT color=#333333>在提交<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件，和创建 tag 前，你应该始终运行<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>validate<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令。它将</FONT><SPAN class=font0><FONT color=#ff0000>检测你的<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件是否是有效的</FONT></SPAN></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--no-check-all</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>Composer 是否进行完整的校验。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 17.25pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=23 x:str><FONT face=微软雅黑>依赖包状态检测<SPAN class=font0><FONT color=#ff0000>status</FONT></SPAN></FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>php composer.phar status</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT color=#333333 face=微软雅黑>如果你经常修改依赖包里的代码，并且它们是从 
+      source（自定义源）进行安装的，那么<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>status<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令允许你进行检查，如果你有任何本地的更改它将会给予提示。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 86.25pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=115 rowSpan=5 x:str><FONT face=微软雅黑>自我更新<SPAN class=font0><FONT color=#ff0000>self-update</FONT></SPAN></FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+self-update</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT face=微软雅黑><FONT color=#333333>将<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN></FONT><SPAN class=font0><FONT color=#ff0000>Composer 自身升级到最新版本</FONT></SPAN><SPAN class=font1><FONT color=#333333>，只需要运行<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>self-update<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令。它将替换你的<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.phar<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件到最新版本。</FONT></SPAN></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=3 x:str><FONT color=#333333 face=微软雅黑>php composer.phar 
+      self-update 1.0.0-alpha7</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>sudo composer self-update</FONT></TD>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--rollback (-r)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>回滚到你已经安装的最后一个版本。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--clean-backups</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>在更新过程中删除旧的备份，这使得更新过后的当前版本是唯一可用的备份。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et8     style="BORDER-TOP: #000000 0.5pt solid; HEIGHT: 120.75pt; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     height=161 rowSpan=7 x:str><FONT face=微软雅黑>更改配置<SPAN class=font0><FONT color=#ff0000>config</FONT></SPAN></FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>php composer.phar config 
+    --list</FONT></TD>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=2 x:str><FONT color=#333333 face=微软雅黑>config<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>命令允许你编辑 Composer 
+      的一些基本设置，无论是本地的<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>composer.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>或者全局的<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>config.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>文件。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et20     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     colSpan=3 x:str><FONT color=#333333 face=微软雅黑>config [options] 
+      [setting-key] [setting-value1] ... [setting-valueN]</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--global (-g)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>操作位于<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>$COMPOSER_HOME/config.json<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>的全局配置文件。如果不指定该参数，此命令将影响当前项目的 
+      composer.json 文件，或<SPAN style="mso-spacerun: yes">&nbsp;</SPAN>--file<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>参数所指向的文件</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--editor (-e)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>使用文本编辑器打开 composer.json 
+      文件。默认情况下始终是打开当前项目的文件。当存在<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>--global<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>参数时，将会打开全局 composer.json 
+      文件</FONT></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--unset</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333><FONT face=微软雅黑><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>移除由<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>setting-key<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>指定名称的配置选项。</FONT></FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--list (-l)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>显示当前配置选项的列表。当存在<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>--global<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>参数时，将会显示全局配置选项的列表。</FONT></TD></TR>
+  <TR style="HEIGHT: 17.25pt" height=23>
+    <TD class=et9     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>--file="..." (-f)</FONT></TD>
+    <TD class=et10     style="BORDER-TOP: #000000 0.5pt solid; BORDER-RIGHT: #000000 0.5pt solid; BORDER-BOTTOM: #000000 0.5pt solid; BORDER-LEFT: #000000 0.5pt solid; BACKGROUND-COLOR: #f2f2f2"     x:str><FONT color=#333333 face=微软雅黑>在一个指定的文件上操作，而不是 
+      composer.json。注意：不能与<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>--global<SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>参数一起使用。</FONT></TD></TR></TABLE> 
+ 
+</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P></BLOCKQUOTE>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P>
+<P> 
+ 
+&nbsp;</P></body>
+</html>

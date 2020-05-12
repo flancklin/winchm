@@ -1,0 +1,30 @@
+#
+127.0.0.1 localhost
+::1 localhost
+
+127.0.0.1 lcl.tp3.com
+
+127.0.0.1 lcl.account.b.com
+127.0.0.1 lcl.account.r.com
+127.0.0.1 lcl.account.f.com
+
+127.0.0.1 lcl.exit.a.com
+127.0.0.1 lcl.exit.b.com
+127.0.0.1 lcl.exit.f.com
+127.0.0.1 lcl.exit.r.com
+
+127.0.0.1 lcl.alilog.f.com
+
+127.0.0.1 lcl.pioneer.b.com
+127.0.0.1 lcl.pioneer.f.com
+127.0.0.1 lcl.pioneer.s.com
+
+127.0.0.1 lcl.collection.a.com
+127.0.0.1 lcl.collection.b.com
+127.0.0.1 lcl.collection.f.com
+127.0.0.1 lcl.collection.r.com
+
+127.0.0.1 lcl.yii2.advanced.function.b.com
+127.0.0.1 lcl.yii2.advanced.function.f.com
+127.0.0.1 lcl.yii2f2.b.com
+192.168.10.6 windows10.microdone.cn

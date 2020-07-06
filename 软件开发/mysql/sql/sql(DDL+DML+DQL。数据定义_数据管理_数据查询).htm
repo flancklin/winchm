@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>sql(DDL+DML+DQL。数据定义/数据管理/数据查询)</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+</style>
+
+</head>
+
+<body>
+<P>&nbsp;</P>
+<P>UPDATE tp_census_202006_9_4<BR>SET collection = SUBSTRING_INDEX(collection, 
+'?adp=', 1),<BR>&nbsp;adp = SUBSTRING_INDEX(collection, '?adp=', - 
+1)<BR>WHERE<BR>&nbsp;id = 5277<BR>AND adp = 1</P>
+<P>&nbsp;</P>
+<P>adp修改不成功。因为colletion第一个被改。</P></body>
+</html>

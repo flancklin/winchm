@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>在php-excel输出时</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+p{
+margin:0
+}
+</style>
+
+</head>
+
+<body>
+<P>问题：</P>
+<H1 
+style='FONT-FAMILY: "Microsoft YaHei"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Internal 
+Server Error</H1>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Microsoft YaHei"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>The 
+server encountered an internal error or misconfiguration and was unable to 
+complete your request.</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Microsoft YaHei"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Please 
+contact the server administrator at wampserver@wampserver.invalid to inform them 
+of the time this error occurred, and the actions you performed just before this 
+error.</P>
+<P 
+style='FONT-SIZE: medium; FONT-FAMILY: "Microsoft YaHei"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>More 
+information about this error may be available in the server error log.</P>
+<HR 
+style='FONT-SIZE: medium; FONT-FAMILY: "Microsoft YaHei"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>
+
+<ADDRESS 
+style='FONT-SIZE: medium; FONT-FAMILY: "Microsoft YaHei"; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(0,0,0); ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>Apache/2.4.39 
+(Win64) PHP/7.2.18 Server at lcs.ca.com Port 80</ADDRESS>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>问题原因</P>
+<P>&nbsp;</P><PRE style="FONT-SIZE: 11.3pt; FONT-FAMILY: 'Fira Code'; COLOR: #a9b7c6; BACKGROUND-COLOR: #2b2b2b"><SPAN style="BACKGROUND-COLOR: #232525">header(</SPAN><SPAN style="COLOR: #6a8759; BACKGROUND-COLOR: #232525">'Content-Type : application/vnd.ms-excel'</SPAN><SPAN style="BACKGROUND-COLOR: #232525">)</SPAN><SPAN style="COLOR: #cc7832; BACKGROUND-COLOR: #232525">;</SPAN></PRE>
+<P>&nbsp;</P>
+<P>解决&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 干掉空格就好</P><PRE style="FONT-SIZE: 11.3pt; FONT-FAMILY: 'Fira Code'; COLOR: #a9b7c6; BACKGROUND-COLOR: #2b2b2b"><SPAN style="BACKGROUND-COLOR: #232525">header(</SPAN><SPAN style="COLOR: #6a8759; BACKGROUND-COLOR: #232525">'Content-Type:application/vnd.ms-excel'</SPAN><SPAN style="BACKGROUND-COLOR: #232525">)</SPAN><SPAN style="COLOR: #cc7832; BACKGROUND-COLOR: #232525">;</SPAN></PRE>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></body>
+</html>

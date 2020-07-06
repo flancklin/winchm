@@ -1,0 +1,350 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>cli操作</title>
+<meta name="GENERATOR" content="WinCHM">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+html,body { 
+	/* Default Font */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+p{
+margin:0
+}
+</style>
+
+</head>
+
+<body>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>.gitignore文件</P>
+<P>&nbsp;</P>
+<BLOCKQUOTE style="MARGIN-RIGHT: 0px" dir=ltr><PRE class=highlight style="BOX-SIZING: border-box; FONT-SIZE: 0.9em; OVERFLOW: auto; BORDER-TOP: rgb(239,238,230) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(239,238,230) 1px solid; BACKGROUND: rgb(238,238,238); WORD-SPACING: 0px; BORDER-BOTTOM: rgb(239,238,230) 1px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); PADDING-BOTTOM: 2px; FONT-STYLE: normal; PADDING-TOP: 2px; PADDING-LEFT: 2px; BORDER-LEFT: rgb(239,238,230) 1px solid; ORPHANS: 2; WIDOWS: 2; MARGIN: 10px 0px; DISPLAY: block; LETTER-SPACING: normal; LINE-HEIGHT: 15px; PADDING-RIGHT: 2px; TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; border-radius: 3px"><CODE style="BOX-SIZING: border-box; FONT-SIZE: 1em; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: 0px; FONT-FAMILY: monospace; BORDER-RIGHT: 0px; BACKGROUND: rgb(238,238,238); BORDER-BOTTOM: 0px; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: 0px; DISPLAY: inline; LINE-HEIGHT: 18px; PADDING-RIGHT: 0px; border-radius: 3px"># 忽略所有的 .a 文件
+*.a
+
+# 但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件
+!lib.a
+
+# 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO
+/TODO
+
+# 忽略任何目录下名为 build 的文件夹
+build/
+
+# 忽略 doc/notes.txt，但不忽略 doc/server/arch.txt
+doc/*.txt
+
+# 忽略 doc/ 目录及其所有子目录下的 .pdf 文件
+doc/**/*.pdf</CODE></PRE></BLOCKQUOTE>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>
+<TABLE id=pretty_format class="tableblock frame-all grid-all stretch" 
+style='BOX-SIZING: border-box; FONT-SIZE: 14px; MARGIN-BOTTOM: 30px; FONT-FAMILY: Georgia, "Times New Roman", serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 30px; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: rgb(136,136,136) 1px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(78,68,60); FONT-STYLE: normal; BORDER-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(252,252,250); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>
+  <CAPTION class=title 
+  style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px 0px 20px; LINE-HEIGHT: 14px; PADDING-RIGHT: 0px">Table 
+  1.<SPAN>&nbsp;</SPAN><CODE 
+  style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; border-radius: 3px">git 
+  log --pretty=format</CODE><SPAN>&nbsp;</SPAN>常用的选项</CAPTION>
+  <COLGROUP style="BOX-SIZING: border-box">
+  <COL style="BOX-SIZING: border-box; WIDTH: 0px">
+  <COL style="BOX-SIZING: border-box; WIDTH: 0px"></COLGROUP>
+  <THEAD style="BOX-SIZING: border-box">
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TH class="tableblock halign-left valign-top" 
+    style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; BORDER-TOP: rgb(136,136,136) 1px solid; FONT-FAMILY: sans-serif; MARGIN-TOP: 0px; BORDER-BOTTOM: rgb(136,136,136) 1px solid; FONT-WEIGHT: bold; PADDING-BOTTOM: 6px; TEXT-ALIGN: left; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">选项</TH>
+    <TH class="tableblock halign-left valign-top" 
+    style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; BORDER-TOP: rgb(136,136,136) 1px solid; FONT-FAMILY: sans-serif; MARGIN-TOP: 0px; BORDER-BOTTOM: rgb(136,136,136) 1px solid; FONT-WEIGHT: bold; PADDING-BOTTOM: 6px; TEXT-ALIGN: left; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">说明</TH></TR></THEAD>
+  <TBODY style="BOX-SIZING: border-box">
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%H</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">提交的完整哈希值</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%h</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">提交的简写哈希值</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%T</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">树的完整哈希值</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%t</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">树的简写哈希值</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%P</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">父提交的完整哈希值</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%p</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">父提交的简写哈希值</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%an</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">作者名字</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%ae</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">作者的电子邮件地址</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%ad</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">作者修订日期（可以用 
+      --date=选项 来定制格式）</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%ar</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">作者修订日期，按多久以前的方式显示</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%cn</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">提交者的名字</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%ce</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">提交者的电子邮件地址</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%cd</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">提交日期</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%cr</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">提交日期（距今多长时间）</P></TD></TR>
+  <TR              style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"  >
+    <TD class="tableblock halign-left valign-top"                          style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 93px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">%s</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"                        style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"    >
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">提交说明</P></TD></TR></TBODY></TABLE></P>
+<P>&nbsp;</P>
+<TABLE id=log_options class="tableblock frame-all grid-all stretch" 
+style='BOX-SIZING: border-box; FONT-SIZE: 14px; MARGIN-BOTTOM: 30px; FONT-FAMILY: Georgia, "Times New Roman", serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 30px; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: rgb(136,136,136) 1px solid; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(78,68,60); FONT-STYLE: normal; BORDER-SPACING: 0px; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(252,252,250); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>
+  <CAPTION class=title 
+  style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px 0px 20px; LINE-HEIGHT: 14px; PADDING-RIGHT: 0px">Table 
+  2.<SPAN>&nbsp;</SPAN><CODE 
+  style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; border-radius: 3px">git 
+  log</CODE><SPAN>&nbsp;</SPAN>的常用选项</CAPTION>
+  <COLGROUP style="BOX-SIZING: border-box">
+  <COL style="BOX-SIZING: border-box; WIDTH: 0px">
+  <COL style="BOX-SIZING: border-box; WIDTH: 0px"></COLGROUP>
+  <THEAD style="BOX-SIZING: border-box">
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TH class="tableblock halign-left valign-top" 
+    style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; BORDER-TOP: rgb(136,136,136) 1px solid; FONT-FAMILY: sans-serif; MARGIN-TOP: 0px; BORDER-BOTTOM: rgb(136,136,136) 1px solid; FONT-WEIGHT: bold; PADDING-BOTTOM: 6px; TEXT-ALIGN: left; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">选项</TH>
+    <TH class="tableblock halign-left valign-top" 
+    style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; BORDER-TOP: rgb(136,136,136) 1px solid; FONT-FAMILY: sans-serif; MARGIN-TOP: 0px; BORDER-BOTTOM: rgb(136,136,136) 1px solid; FONT-WEIGHT: bold; PADDING-BOTTOM: 6px; TEXT-ALIGN: left; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">说明</TH></TR></THEAD>
+  <TBODY style="BOX-SIZING: border-box">
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">-p</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">按补丁格式显示每个提交引入的差异。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--stat</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">显示每次提交的文件修改统计信息。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--shortstat</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">只显示 
+      --stat 中最后的行数修改添加移除统计。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--name-only</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅在提交信息后显示已修改的文件清单。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--name-status</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">显示新增、修改、删除的文件清单。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--abbrev-commit</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅显示 
+      SHA-1 校验和所有 40 个字符中的前几个字符。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--relative-date</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">使用较短的相对时间而不是完整格式显示日期（比如“2 
+      weeks ago”）。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--graph</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">在日志旁以 
+      ASCII 图形显示分支与合并历史。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--pretty</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">使用其他格式显示历史提交信息。可用的选项包括 
+      oneline、short、full、fuller 和 format（用来定义自己的格式）。</P></TD></TR>
+  <TR   style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px">
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 164px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--oneline</CODE></P></TD>
+    <TD class="tableblock halign-left valign-top"     style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+      <P class=tableblock 
+      style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+      style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--pretty=oneline 
+      --abbrev-commit</CODE><SPAN>&nbsp;</SPAN>合用的简写。</P></TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<P><CAPTION class=title 
+style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; FONT-FAMILY: sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(78,68,60); PADDING-BOTTOM: 0px; FONT-STYLE: normal; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px 0px 20px; LETTER-SPACING: normal; LINE-HEIGHT: 14px; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(252,252,250); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">Table 
+3. 限制<SPAN>&nbsp;</SPAN><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; border-radius: 3px">git 
+log</CODE><SPAN>&nbsp;</SPAN>输出的选项</CAPTION><COLGROUP 
+style='BOX-SIZING: border-box; FONT-SIZE: 14px; FONT-FAMILY: Georgia, "Times New Roman", serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(78,68,60); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(252,252,250); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'><COL 
+style="BOX-SIZING: border-box; WIDTH: 0px"><COL 
+style="BOX-SIZING: border-box; WIDTH: 0px"></COLGROUP><THEAD 
+style='BOX-SIZING: border-box; FONT-SIZE: 14px; FONT-FAMILY: Georgia, "Times New Roman", serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(78,68,60); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(252,252,250); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'><TR style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"><TH 
+class="tableblock halign-left valign-top" 
+style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; BORDER-TOP: rgb(136,136,136) 1px solid; FONT-FAMILY: sans-serif; MARGIN-TOP: 0px; BORDER-BOTTOM: rgb(136,136,136) 1px solid; FONT-WEIGHT: bold; PADDING-BOTTOM: 6px; TEXT-ALIGN: left; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">选项</TH><TH 
+class="tableblock halign-left valign-top" 
+style="BOX-SIZING: border-box; FONT-SIZE: 0.8em; BORDER-TOP: rgb(136,136,136) 1px solid; FONT-FAMILY: sans-serif; MARGIN-TOP: 0px; BORDER-BOTTOM: rgb(136,136,136) 1px solid; FONT-WEIGHT: bold; PADDING-BOTTOM: 6px; TEXT-ALIGN: left; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">说明</TH></TR></THEAD><TBODY 
+style='BOX-SIZING: border-box; FONT-SIZE: 14px; FONT-FAMILY: Georgia, "Times New Roman", serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(78,68,60); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(252,252,250); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'><TR style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 132px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px"></P>
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">-&lt;n&gt;</CODE></P></TD><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅显示最近的 
+n 条提交。</P></TD></TR><TR style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 132px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--since</CODE>,<SPAN>&nbsp;</SPAN><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--after</CODE></P></TD><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅显示指定时间之后的提交。</P></TD></TR><TR style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 132px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--until</CODE>,<SPAN>&nbsp;</SPAN><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--before</CODE></P></TD><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅显示指定时间之前的提交。</P></TD></TR><TR style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 132px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--author</CODE></P></TD><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅显示作者匹配指定字符串的提交。</P></TD></TR><TR style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 132px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--committer</CODE></P></TD><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅显示提交者匹配指定字符串的提交。</P></TD></TR><TR style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 132px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">--grep</CODE></P></TD><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅显示提交说明中包含指定字符串的提交。</P></TD></TR><TR style="BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP-WIDTH: 0px"><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; WIDTH: 132px; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px"><CODE 
+style="BOX-SIZING: border-box; OVERFLOW: auto; MARGIN-BOTTOM: 1em; BORDER-TOP: rgb(245,245,245) 1px solid; FONT-FAMILY: monospace; BORDER-RIGHT: rgb(245,245,245) 1px solid; BACKGROUND: rgb(238,238,238); WHITE-SPACE: pre-wrap; BORDER-BOTTOM: rgb(245,245,245) 1px solid; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; BORDER-LEFT: rgb(245,245,245) 1px solid; DISPLAY: inline; PADDING-RIGHT: 0px; overflow-wrap: break-word; border-radius: 3px">-S</CODE></P></TD><TD class="tableblock halign-left valign-top" style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; PADDING-BOTTOM: 6px; PADDING-TOP: 6px; PADDING-LEFT: 6px; LINE-HEIGHT: 14px; PADDING-RIGHT: 6px">
+<P class=tableblock 
+style="BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: sans-serif; MARGIN: 6px 0px 11px; LINE-HEIGHT: 14px; TEXT-INDENT: 0px">仅显示添加或删除内容匹配指定字符串的提交。</P>
+<P></TD></TR></TBODY><BR 
+class=Apple-interchange-newline></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></body>
+</html>
